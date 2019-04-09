@@ -1,0 +1,26 @@
+#include<stdio.h>
+main()
+{
+   FILE *rf,*wf;
+   int i,j;
+   int a[4][4];
+   rf =fopen("c://tsk.txt","r");
+   wf =fopen("f://tskzs.txt","w");
+   for(i=0;i<4;i++)
+   {
+     for(j=0;j<4;j++)
+	 {
+	   fscanf(rf,"%d",&a[i][j]);
+	   printf("%d\n",a[i][j]);
+	 }
+   }
+   for(i=0;i<4;i++)
+   {
+      for(j=0;j<4;j++)
+	  {
+		  fprintf(wf,"%d",a[i][j]);
+	  }
+   }
+   fclose(rf);
+   fclose(wf);
+}
